@@ -9,6 +9,7 @@ import{
 import { StackNavigator } from 'react-navigation';
 import Login from './Login/Login';
 import Profile from './Login/Profile';
+import Menu from './Login/MenuItem';
 
 const Application = StackNavigator({
   Home: { screen: Login},
@@ -47,17 +48,17 @@ export default class App extends React.Component {
                   </View>
 
                   <View style={Styles.menuContainer}>
-                    <MenuItem itemImage={require('./img/icon1.png')} />
-                    <MenuItem itemImage={require('./img/icon1.png')} />
-                    <MenuItem itemImage={require('./img/icon1.png')} />
-                    <MenuItem itemImage={require('./img/icon1.png')} />
-                    <MenuItem itemImage={require('./img/icon1.png')} />
-                    <MenuItem itemImage={require('./img/icon1.png')} />
+                    <Menu itemImage={require('./img/icon1.png')} />
+                    <Menu itemImage={require('./img/icon1.png')} />
+                    <Menu itemImage={require('./img/icon1.png')} />
+                    <Menu itemImage={require('./img/icon1.png')} />
+                    <Menu itemImage={require('./img/icon1.png')} />
+                    <Menu itemImage={require('./img/icon1.png')} />
                   </View>
             
             </View>
             
-            <Application/>
+            <Application />
 
         </ImageBackground>
     );
@@ -90,7 +91,7 @@ const Styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255, .1)'
   },
   menuContainer:{
-    height: '40',
+    height: 40,
     flexDirection: 'row',
     flexWrap: 'wrap',
   }
