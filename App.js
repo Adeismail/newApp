@@ -4,11 +4,11 @@ import{
   Text,
   View,
   ImageBackground,
+  MenuItem
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Login from './Login/Login';
 import Profile from './Login/Profile';
-import MenuItem from './Login/MenuItem';
 
 const Application = StackNavigator({
   Home: { screen: Login},
@@ -38,26 +38,26 @@ export default class App extends React.Component {
   render(){
     return(
       <ImageBackground
-            source={require('./app/img/background.jpg')}
+            source={require('./img/background.jpg')}
             style={Styles.container}>
 
             <View style={Styles.overlayContainer}>
                   <View style={Styles.top}>
-                    <Text style={styles.header}>H O M E</Text>
+                    <Text style={Styles.header}>H O M E</Text>
                   </View>
 
-                  <View style={styles.menuContainer}>
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
+                  <View style={Styles.menuContainer}>
+                    <MenuItem itemImage={require('./img/icon1.png')} />
+                    <MenuItem itemImage={require('./img/icon1.png')} />
+                    <MenuItem itemImage={require('./img/icon1.png')} />
+                    <MenuItem itemImage={require('./img/icon1.png')} />
+                    <MenuItem itemImage={require('./img/icon1.png')} />
+                    <MenuItem itemImage={require('./img/icon1.png')} />
                   </View>
             
             </View>
             
-            <Application />
+            <Application/>
 
         </ImageBackground>
     );
