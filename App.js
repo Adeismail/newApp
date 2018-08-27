@@ -3,10 +3,12 @@ import{
   StyleSheet,
   Text,
   View,
+  ImageBackground,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Login from './Login/Login';
 import Profile from './Login/Profile';
+import MenuItem from './app/Components/MenuItem';
 
 const Application = StackNavigator({
   Home: { screen: Login},
@@ -35,7 +37,62 @@ export default class App extends React.Component {
 
   render(){
     return(
-        <Application />
+      <ImageBackground
+            source={require('./app/img/background.jpg')}
+            style={Styles.container}>
+
+            <View style={Styles.overlayContainer}>
+                  <View style={Styles.top}>
+                    <Text style={styles.header}>H O M E</Text>
+                  </View>
+
+                  <View style={styles.menuContainer}>
+                    <MenuItem itemImage={require('./app/img/icon1.png')} />
+                    <MenuItem itemImage={require('./app/img/icon1.png')} />
+                    <MenuItem itemImage={require('./app/img/icon1.png')} />
+                    <MenuItem itemImage={require('./app/img/icon1.png')} />
+                    <MenuItem itemImage={require('./app/img/icon1.png')} />
+                    <MenuItem itemImage={require('./app/img/icon1.png')} />
+                  </View>
+            
+            </View>
+            
+            <Application />
+
+        </ImageBackground>
     );
   }
 }
+
+const Styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
+  overlayContainer:{
+    flex: 1,
+    backgroundColor: 'rgba(47,163,218, .4)'
+  },
+  top: {
+    height: '50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  header:{
+    color:'#fff',
+    fontSize: 28,
+    borderColor: '#fff',
+    borderWidth: 2,
+    padding: 20,
+    paddingLeft: 40,
+    paddingRight: 40,
+    backgroundColor: 'rgba(255,255,255, .1)'
+  },
+  menuContainer:{
+    height: '40',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  }
+
+});
