@@ -8,7 +8,7 @@ import{
 import { StackNavigator } from 'react-navigation';
 import Login from './Login/Login';
 import Profile from './Login/Profile';
-import MenuItem from './app/Components/MenuItem';
+import MenuItem from './Login/MenuItem';
 
 const Application = StackNavigator({
   Home: { screen: Login},
