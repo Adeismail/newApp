@@ -4,11 +4,12 @@ import{
   Text,
   View,
   ImageBackground,
+
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Login from './Login/Login';
 import Profile from './Login/Profile';
-import MenuItem from './app/Components/MenuItem';
+import Menu from './Login/MenuItem';
 
 const Application = StackNavigator({
   Home: { screen: Login},
@@ -37,29 +38,8 @@ export default class App extends React.Component {
 
   render(){
     return(
-      <ImageBackground
-            source={require('./app/img/background.jpg')}
-            style={Styles.container}>
-
-            <View style={Styles.overlayContainer}>
-                  <View style={Styles.top}>
-                    <Text style={styles.header}>H O M E</Text>
-                  </View>
-
-                  <View style={styles.menuContainer}>
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                    <MenuItem itemImage={require('./app/img/icon1.png')} />
-                  </View>
-            
-            </View>
-            
-            <Application />
-
-        </ImageBackground>
+      
+        <Application/>
     );
   }
 }
@@ -89,10 +69,6 @@ const Styles = StyleSheet.create({
     paddingRight: 40,
     backgroundColor: 'rgba(255,255,255, .1)'
   },
-  menuContainer:{
-    height: '40',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  }
+
 
 });

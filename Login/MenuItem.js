@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
         height: '100%',
         opacity: 0.8,
         borderColor:'#fff',
-        borderWidth: '3',
+        borderWidth: 3,
     },
 })

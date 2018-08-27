@@ -9,6 +9,7 @@ import{
   AsyncStorage,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import Profile from '../Login/Profile';
 
 export default class Login extends React.Component {
 
@@ -52,7 +53,7 @@ export default class Login extends React.Component {
 
                     <TouchableOpacity
                         style={styles.btn}
-                        onPress={this.Login}>
+                        onPress={this.teslogin}>
                         <Text>Log In</Text>    
                     </TouchableOpacity>
             </View>
@@ -62,8 +63,10 @@ export default class Login extends React.Component {
         
     );
   }
+  teslogin = () => {
+      this.props.navigation.navigate('Profile')
+  }
   Login = () => {
-
       fetch('http://192.168.56.1:8000/api/login', {
           method: 'POST',
           headers: {
@@ -88,6 +91,7 @@ export default class Login extends React.Component {
         .done();
   }
 }
+
 const styles = StyleSheet.create({
     wrapper: {
         flex:1,
